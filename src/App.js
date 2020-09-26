@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import 'fontsource-roboto'
+import { createMuiTheme } from '@material-ui/core/styles'
+import { ThemeProvider } from '@material-ui/styles'
+import { teal } from '@material-ui/core/colors'
 import Header from './components/header/Header'
 import ConfirmDialog from './components/confirm-dialog/ConfirmDialog'
 import AlertSnackbar from './components/alert-snackbar/AlertSnackbar'
@@ -9,6 +12,14 @@ import ExportDialog from './components/export-dialog/ExportDialog'
 import ImportDialog from './components/import-dialog/ImportDialog'
 
 export default function App() {
+    const theme = createMuiTheme({
+        palette: {
+            primary: {
+                main: teal[500]
+            }
+        }
+    })
+
     const [links, setLinks] = useState(
         JSON.parse(localStorage.getItem('links') || '[]')
     )
@@ -184,65 +195,73 @@ export default function App() {
 
     return (
         <div className="app">
-            <Header
-                onSearchKeyworkChanged={onSearchKeyworkChanged}
-                onAddNewLinkFormClicked={onAddNewLinkFormClicked}
-                onExportClicked={onExportClicked}
-                onImportClicked={onImportClicked}
-            />
-            <LinkGroup
-                data={links.filter(link => {
-                    return (
-                        link.name.includes(searchKeyword) ||
-                        link.url.includes(searchKeyword)
-                    )
-                })}
-                onAddNewLinkClicked={onAddNewLinkFormClicked}
-                onEditLinkClicked={link => onEditLinkFormClicked(link)}
-                onDeleteLinkClicked={link => onDeleteLinkClicked(link)}
-                onCopyToClipboardClicked={link => onCopyToClipboardClicked()}
-            />
-            <LinkFormDialog
-                open={showLinkForm.open}
-                id={showLinkForm.id}
-                name={showLinkForm.name}
-                url={showLinkForm.url}
-                tag={showLinkForm.tag}
-                positiveButton={showLinkForm.positiveButton}
-                onPositiveButtonClicked={link => onUpdateLinkFormClicked(link)}
-                negativeButton={showLinkForm.negativeButton}
-                onNegativeButtonClicked={onCloseLinkFormClicked}
-            />
-            <AlertSnackbar
-                open={showCopiedToClipboard}
-                onClose={onDismissCopyToClipboardMessage}
-                message={'Copied URL to clipboard'}
-            />
-            <ConfirmDialog
-                open={showConfirmDeleteLink.open}
-                title={'Delete this link?'}
-                message={"This action can't undo"}
-                positiveButton={'Confirm'}
-                onPositiveButtonClicked={() =>
-                    onDeleteLinkConfirmed(showConfirmDeleteLink.selectedLink)
-                }
-                negativeButton={'Cancel'}
-                onNegativeButtonClicked={onDeleteLinkCanceled}
-            />
-            <ExportDialog
-                open={showExport.open}
-                title={showExport.title}
-                data={showExport.data}
-                onPositiveButtonClicked={onCopyExportDataClicked}
-                onNegativeButtonClicked={onCloseExportClicked}
-            />
-            <ImportDialog
-                open={showImport.open}
-                title={showImport.title}
-                data={showImport.data}
-                onPositiveButtonClicked={onImportDataClicked}
-                onNegativeButtonClicked={onCloseImportClicked}
-            />
+            <ThemeProvider theme={theme}>
+                <Header
+                    onSearchKeyworkChanged={onSearchKeyworkChanged}
+                    onAddNewLinkFormClicked={onAddNewLinkFormClicked}
+                    onExportClicked={onExportClicked}
+                    onImportClicked={onImportClicked}
+                />
+                <LinkGroup
+                    data={links.filter(link => {
+                        return (
+                            link.name.includes(searchKeyword) ||
+                            link.url.includes(searchKeyword)
+                        )
+                    })}
+                    onAddNewLinkClicked={onAddNewLinkFormClicked}
+                    onEditLinkClicked={link => onEditLinkFormClicked(link)}
+                    onDeleteLinkClicked={link => onDeleteLinkClicked(link)}
+                    onCopyToClipboardClicked={link =>
+                        onCopyToClipboardClicked()
+                    }
+                />
+                <LinkFormDialog
+                    open={showLinkForm.open}
+                    id={showLinkForm.id}
+                    name={showLinkForm.name}
+                    url={showLinkForm.url}
+                    tag={showLinkForm.tag}
+                    positiveButton={showLinkForm.positiveButton}
+                    onPositiveButtonClicked={link =>
+                        onUpdateLinkFormClicked(link)
+                    }
+                    negativeButton={showLinkForm.negativeButton}
+                    onNegativeButtonClicked={onCloseLinkFormClicked}
+                />
+                <AlertSnackbar
+                    open={showCopiedToClipboard}
+                    onClose={onDismissCopyToClipboardMessage}
+                    message={'Copied URL to clipboard'}
+                />
+                <ConfirmDialog
+                    open={showConfirmDeleteLink.open}
+                    title={'Delete this link?'}
+                    message={"This action can't undo"}
+                    positiveButton={'Confirm'}
+                    onPositiveButtonClicked={() =>
+                        onDeleteLinkConfirmed(
+                            showConfirmDeleteLink.selectedLink
+                        )
+                    }
+                    negativeButton={'Cancel'}
+                    onNegativeButtonClicked={onDeleteLinkCanceled}
+                />
+                <ExportDialog
+                    open={showExport.open}
+                    title={showExport.title}
+                    data={showExport.data}
+                    onPositiveButtonClicked={onCopyExportDataClicked}
+                    onNegativeButtonClicked={onCloseExportClicked}
+                />
+                <ImportDialog
+                    open={showImport.open}
+                    title={showImport.title}
+                    data={showImport.data}
+                    onPositiveButtonClicked={onImportDataClicked}
+                    onNegativeButtonClicked={onCloseImportClicked}
+                />
+            </ThemeProvider>
         </div>
     )
 }
