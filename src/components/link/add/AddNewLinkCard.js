@@ -31,6 +31,7 @@ export default function AddNewLinkCard(props) {
                 xs={12}>
                 <Card>
                     <Button
+                        title={'Add the new one'}
                         className={classes.addButton}
                         color="default"
                         size={'large'}

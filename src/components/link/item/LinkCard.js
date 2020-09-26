@@ -52,12 +52,14 @@ export default function LinkCard(props) {
                             <div className={classes.tag} />
                             <Box flexGrow={1} />
                             <IconButton
+                                title={'Delete'}
                                 onClick={() =>
                                     props.onDeleteLinkClicked(props.link)
                                 }>
                                 <DeleteOutlineIcon />
                             </IconButton>
                             <IconButton
+                                title={'Edit'}
                                 onClick={() => {
                                     props.onEditLinkClicked(props.link)
                                 }}>
@@ -65,6 +67,7 @@ export default function LinkCard(props) {
                             </IconButton>
                             <CopyToClipboard text={props.link.url}>
                                 <IconButton
+                                    title={'Copy URL'}
                                     onClick={() =>
                                         props.onCopyToClipboardClicked(
                                             props.link
@@ -77,7 +80,7 @@ export default function LinkCard(props) {
                                 href={props.link.url}
                                 target={'_blank'}
                                 rel="noopener noreferrer">
-                                <IconButton>
+                                <IconButton title={'Open URL'}>
                                     <LaunchIcon />
                                 </IconButton>
                             </a>

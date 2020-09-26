@@ -55,6 +55,7 @@ export default function Header(props) {
                 <Grid item md={'auto'} xs={1} />
                 <Grid container item md={4} sm={11} xs={10} justify="flex-end">
                     <Button
+                        title={'Export to JSON'}
                         className={classes.button}
                         variant="outlined"
                         color="primary"
@@ -62,6 +63,7 @@ export default function Header(props) {
                         {'Export'}
                     </Button>
                     <Button
+                        title={'Import from JSON'}
                         className={classes.button}
                         variant="outlined"
                         color="primary"
@@ -69,6 +71,7 @@ export default function Header(props) {
                         {'Import'}
                     </Button>
                     <Button
+                        title={'Add the new one'}
                         className={classes.button}
                         variant="contained"
                         color="primary"

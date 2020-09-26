@@ -16,6 +16,7 @@ export default function ColoredRadio(props) {
     })(props => <Radio color="default" {...props} />)
     return (
         <CustomRadio
+            title={props.color}
             checked={props.selectedColor === props.color}
             value={props.color}
             key={props.color}
