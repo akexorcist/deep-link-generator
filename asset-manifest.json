@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/deep-link-generator/static/css/main.65a4c388.chunk.css",
-    "main.js": "/deep-link-generator/static/js/main.71a00811.chunk.js",
-    "main.js.map": "/deep-link-generator/static/js/main.71a00811.chunk.js.map",
+    "main.js": "/deep-link-generator/static/js/main.174e37de.chunk.js",
+    "main.js.map": "/deep-link-generator/static/js/main.174e37de.chunk.js.map",
     "runtime-main.js": "/deep-link-generator/static/js/runtime-main.fce09b18.js",
     "runtime-main.js.map": "/deep-link-generator/static/js/runtime-main.fce09b18.js.map",
     "static/css/2.5e57fced.chunk.css": "/deep-link-generator/static/css/2.5e57fced.chunk.css",
-    "static/js/2.3e303f87.chunk.js": "/deep-link-generator/static/js/2.3e303f87.chunk.js",
-    "static/js/2.3e303f87.chunk.js.map": "/deep-link-generator/static/js/2.3e303f87.chunk.js.map",
+    "static/js/2.b054b934.chunk.js": "/deep-link-generator/static/js/2.b054b934.chunk.js",
+    "static/js/2.b054b934.chunk.js.map": "/deep-link-generator/static/js/2.b054b934.chunk.js.map",
     "index.html": "/deep-link-generator/index.html",
-    "precache-manifest.a9c98efdbfa8be0c67c6c9c699a15589.js": "/deep-link-generator/precache-manifest.a9c98efdbfa8be0c67c6c9c699a15589.js",
+    "precache-manifest.8586863da1b85de9a1b7aba05c5442a5.js": "/deep-link-generator/precache-manifest.8586863da1b85de9a1b7aba05c5442a5.js",
     "service-worker.js": "/deep-link-generator/service-worker.js",
     "static/css/2.5e57fced.chunk.css.map": "/deep-link-generator/static/css/2.5e57fced.chunk.css.map",
     "static/css/main.65a4c388.chunk.css.map": "/deep-link-generator/static/css/main.65a4c388.chunk.css.map",
-    "static/js/2.3e303f87.chunk.js.LICENSE.txt": "/deep-link-generator/static/js/2.3e303f87.chunk.js.LICENSE.txt",
+    "static/js/2.b054b934.chunk.js.LICENSE.txt": "/deep-link-generator/static/js/2.b054b934.chunk.js.LICENSE.txt",
     "static/media/index.css": "/deep-link-generator/static/media/roboto-vietnamese-400-normal.a8be5b46.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.fce09b18.js",
     "static/css/2.5e57fced.chunk.css",
-    "static/js/2.3e303f87.chunk.js",
+    "static/js/2.b054b934.chunk.js",
     "static/css/main.65a4c388.chunk.css",
-    "static/js/main.71a00811.chunk.js"
+    "static/js/main.174e37de.chunk.js"
   ]
 }
