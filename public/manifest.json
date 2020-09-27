@@ -1,6 +1,7 @@
 {
     "short_name": "Deep Link Generator",
-    "name": "Feel hard to test the deep link in your app? Yes, me too!",
+    "name": "Deep Link Generator",
+    "description": "Feel hard to test the deep link in your app? Yes, me too!",
     "icons": [
         {
             "src": "favicon.ico",
