@@ -21,7 +21,23 @@ export default function App() {
     })
 
     const [links, setLinks] = useState(
-        JSON.parse(localStorage.getItem('links') || '[]')
+        JSON.parse(
+            localStorage.getItem('links') ||
+                JSON.stringify([
+                    {
+                        id: '1601142258869',
+                        name: '[Sample] Facebook Page on Android',
+                        url: 'fb://page/577361412281379',
+                        tag: '#2196f3'
+                    },
+                    {
+                        id: '1601142258870',
+                        name: '[Sample] Facebook Page on iOS',
+                        url: 'fb://profile/577361412281379',
+                        tag: '#2196f3'
+                    }
+                ])
+        )
     )
 
     const [searchKeyword, setSearchKeyword] = useState('')
