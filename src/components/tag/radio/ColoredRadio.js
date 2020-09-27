@@ -17,7 +17,9 @@ export default function ColoredRadio(props) {
     return (
         <CustomRadio
             title={props.color}
-            checked={props.selectedColor === props.color}
+            checked={
+                props.selectedColor.toLowerCase() === props.color.toLowerCase()
+            }
             value={props.color}
             key={props.color}
             onChange={props.onChanged}
